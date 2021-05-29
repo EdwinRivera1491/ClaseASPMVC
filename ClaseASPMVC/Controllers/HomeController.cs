@@ -11,13 +11,13 @@ namespace ClaseASPMVC.Controllers
         public ActionResult Index()
         {
             return View();
-
-
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+
+
+            ViewBag.Message = "tu aplicacion de descripción.";
 
             return View();
         }
@@ -27,6 +27,27 @@ namespace ClaseASPMVC.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult Clients()
+        {
+            ViewBag.Message = "In this section you will see your clients";
+
+            return View();
+        }
+
+       
+
+        [ActionName ("Hora")]
+        public string HoraActual()
+        {
+            return CadenaHora();
+        }
+
+        [NonAction]
+        public string CadenaHora()
+        {
+            return "La hora es: " + DateTime.Now.ToString("T");
         }
     }
 }
